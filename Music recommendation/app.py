@@ -4,7 +4,7 @@ import pandas as pd
 # Load dataset
 @st.cache_data
 def load_data():
-    return pd.read_csv("https://github.com/AkshayaM711/Music_Recommendation/blob/16c2e849b48a23e939cfaa4eed41ecc55c4a7e74/Music%20recommendation/music_sentiment_dataset.csv")  # Ensure the dataset is in the same folder
+   return pd.read_csv("https://raw.githubusercontent.com/AkshayaM711/Music_Recommendation/main/Music%20recommendation/music_sentiment_dataset.csv")
 
 df = load_data()
 
