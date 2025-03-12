@@ -13,6 +13,16 @@ genres = df["Genre"].dropna().unique().tolist()
 energy_levels = df["Energy"].dropna().unique().tolist()
 danceability_levels = df["Danceability"].dropna().unique().tolist()
 
+# Fallback song list
+fallback_songs = [
+    "Imagine",
+    "Bohemian Rhapsody",
+    "Hotel California",
+    "Smells Like Teen Spirit"
+]
+fallback_counter = 0  # Counter to track fallback songs
+
+
 
 # Streamlit UI
 st.title("🎵 Music Recommendation System")
@@ -43,4 +53,6 @@ if st.button("Get Recommendations"):
         for text in recommendations:
             st.write(f"- {text}")
     else:
-        st.warning("No matching recommendations found. Try different selections.")
+        # Display only a fallback song name without a warning box
+        fallback_song = fallback_songs[len(recommendations) % len(fallback_songs)]
+        st.subheader(f"🎵 {fallback_song}")
