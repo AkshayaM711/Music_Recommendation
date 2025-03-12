@@ -35,11 +35,11 @@ if st.button("Get Recommendations"):
     ]
     
     # Get unique User_Text values
-    recommendations = filtered_df["User_Text"].dropna().unique().tolist()
+    recommendations = filtered_df["Song_Name"].dropna().unique().tolist()
 
     # Display results
     if recommendations:
-        st.subheader("Recommended User Text:")
+        st.subheader("Recommended Song:")
         for text in recommendations:
             st.write(f"- {text}")
     else:
